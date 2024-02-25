@@ -1,4 +1,4 @@
-package fr.devpioneer.mbc.panels;
+package fr.devpioneer.mbc.gui.panels;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,9 +7,9 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-import static fr.devpioneer.mbc.core.Block.saveBlockJson;
-import static fr.devpioneer.mbc.core.BlockStates.saveStatesJson;
-import static fr.devpioneer.mbc.core.Item.saveItemJson;
+import static fr.devpioneer.mbc.core.json.Block.saveBlockJson;
+import static fr.devpioneer.mbc.core.json.BlockStates.saveStatesJson;
+import static fr.devpioneer.mbc.core.json.Item.saveItemJson;
 
 public class PJsonBlock extends JPanel {
     static JMenuBar menuBar = new JMenuBar();
@@ -19,7 +19,7 @@ public class PJsonBlock extends JPanel {
         JTextField txtF = new JTextField("BlockName", 10);
         add(txtF);
 
-        JButton btn = new JButton("Create Json");
+        JButton btn = new JButton("Create Jsons");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

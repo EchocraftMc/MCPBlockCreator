@@ -1,7 +1,7 @@
-package fr.devpioneer.mbc.frames;
+package fr.devpioneer.mbc.gui.frames;
 import fr.devpioneer.mbc.Main;
-import fr.devpioneer.mbc.panels.PCodeBlock;
-import fr.devpioneer.mbc.panels.PJsonBlock;
+import fr.devpioneer.mbc.gui.panels.PCodeBlock;
+import fr.devpioneer.mbc.gui.panels.PJsonBlock;
 import javax.swing.*;
 import java.awt.*;
 

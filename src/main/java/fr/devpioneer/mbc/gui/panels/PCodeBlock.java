@@ -1,4 +1,4 @@
-package fr.devpioneer.mbc.panels;
+package fr.devpioneer.mbc.gui.panels;
 
 import javax.swing.*;
 import java.awt.*;

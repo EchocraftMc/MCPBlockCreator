@@ -1,7 +1,7 @@
 package fr.devpioneer.mbc;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import fr.devpioneer.mbc.frames.FHome;
+import fr.devpioneer.mbc.gui.frames.FHome;
 
 
 import javax.swing.*;

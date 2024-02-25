@@ -1,4 +1,4 @@
-package fr.devpioneer.mbc.core;
+package fr.devpioneer.mbc.core.json;
 
 import com.google.gson.Gson;
 
