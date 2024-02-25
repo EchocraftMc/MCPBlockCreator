@@ -1,7 +1,6 @@
 package fr.devpioneer.mbc.core;
 
 import com.google.gson.Gson;
-import fr.devpioneer.mbc.frames.FHome;
 
 import javax.swing.*;
 import java.io.BufferedWriter;
@@ -11,10 +10,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BlockVariant {
+public class BlockStates {
     private Map<String, Map<String, String>> variants;
 
-    public BlockVariant(Map<String, Map<String, String>> variants) {
+    public BlockStates(Map<String, Map<String, String>> variants) {
         this.variants = variants;
     }
 
@@ -35,15 +34,17 @@ public class BlockVariant {
             Map<String, Map<String, String>> variantsMap = new HashMap<>();
             variantsMap.put("normal", modelMap);
 
-            BlockVariant blockVariant = new BlockVariant(variantsMap);
+            BlockStates blockStates = new BlockStates(variantsMap);
 
             Gson gson = new Gson();
-            File json = new File(selectedDirectory.getAbsolutePath() + "/" + blockName + ".json");
+            File directory = new File(selectedDirectory.getAbsolutePath() + "/MBC/");
+            File json = new File(directory.getAbsolutePath() +"/" + blockName + ".json");
             if (!json.exists()){
+                directory.mkdir();
                 json.createNewFile();
             }
             BufferedWriter writer = new BufferedWriter(new FileWriter(json));
-            writer.write(gson.toJson(blockVariant));
+            writer.write(gson.toJson(blockStates));
             writer.close();
             JOptionPane.showMessageDialog(null, "File saved successfully!");
         } catch (IOException ex) {

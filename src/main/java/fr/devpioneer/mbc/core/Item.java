@@ -1,4 +1,4 @@
 package fr.devpioneer.mbc.core;
 
-public class Block {
+public class Item {
 }
