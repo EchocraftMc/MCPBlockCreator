@@ -25,7 +25,7 @@ public class BlockStates {
         this.variants = variants;
     }
 
-    public static void saveJson(File selectedDirectory, JTextField txtF) {
+    public static void saveStatesJson(File selectedDirectory, JTextField txtF) {
         try {
             final String blockName = txtF.getText();
             Map<String, String> modelMap = new HashMap<>();
@@ -37,7 +37,7 @@ public class BlockStates {
             BlockStates blockStates = new BlockStates(variantsMap);
 
             Gson gson = new Gson();
-            File directory = new File(selectedDirectory.getAbsolutePath() + "/MBC/");
+            File directory = new File(selectedDirectory.getAbsolutePath());
             File json = new File(directory.getAbsolutePath() +"/" + blockName + ".json");
             if (!json.exists()){
                 directory.mkdir();
