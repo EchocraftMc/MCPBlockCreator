@@ -23,12 +23,12 @@ public class Block {
             String parent = "block/cube_all";
             String texturePath = "blocks/" + blockName.getText();
 
-            // Création de la structure de données pour représenter le JSON
+
             Map<String, String> textures = new HashMap<>();
             textures.put("all", texturePath);
             Block block = new Block(parent, textures);
 
-            // Utilisation de Gson pour convertir l'objet en JSON
+
             Gson gson = new Gson();
             File directory = new File(selectedDirectory.getAbsolutePath() );
             File json = new File(directory.getAbsolutePath() + "/" + blockName.getText() + ".json");
