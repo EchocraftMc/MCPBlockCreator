@@ -21,9 +21,9 @@ public class Item {
         this.display = display;
     }
 
-    public static void saveItemJson(File selectedDirectory, JTextField blockName) throws IOException {
+    public static void saveItemJson(File selectedDirectory, String blockName) throws IOException {
         try {
-            String parent = "block/cobblestone";
+            String parent = "block/" + blockName;
             Map<String, List<Double>> thirdPersonProps = new HashMap<>();
             thirdPersonProps.put("rotation", Arrays.asList(10.0, -45.0, 170.0));
             thirdPersonProps.put("translation", Arrays.asList(0.0, 1.5, -2.75));
@@ -37,7 +37,7 @@ public class Item {
 
             Gson gson = new Gson();
             File directory = new File(selectedDirectory.getAbsolutePath());
-            File json = new File(directory.getAbsolutePath() + "/" + blockName.getText() + ".json");
+            File json = new File(directory.getAbsolutePath() + "/" + blockName + ".json");
             if (!json.exists()) {
                 directory.mkdir();
                 json.createNewFile();

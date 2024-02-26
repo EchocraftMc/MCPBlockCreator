@@ -18,10 +18,10 @@ public class Block {
         this.parent = parent;
         this.textures = textures;
     }
-    public static void saveBlockJson(File selectedDirectory, JTextField blockName) {
+    public static void saveBlockJson(File selectedDirectory, String blockName) {
         try {
             String parent = "block/cube_all";
-            String texturePath = "blocks/" + blockName.getText();
+            String texturePath = "blocks/" + blockName;
 
 
             Map<String, String> textures = new HashMap<>();
@@ -31,7 +31,7 @@ public class Block {
 
             Gson gson = new Gson();
             File directory = new File(selectedDirectory.getAbsolutePath() );
-            File json = new File(directory.getAbsolutePath() + "/" + blockName.getText() + ".json");
+            File json = new File(directory.getAbsolutePath() + "/" + blockName + ".json");
             if (!json.exists()){
                 directory.mkdir();
                 json.createNewFile();

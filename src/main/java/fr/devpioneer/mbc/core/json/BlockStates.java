@@ -25,9 +25,9 @@ public class BlockStates {
         this.variants = variants;
     }
 
-    public static void saveStatesJson(File selectedDirectory, JTextField txtF) {
+    public static void saveStatesJson(File selectedDirectory, String txtF) {
         try {
-            final String blockName = txtF.getText();
+            final String blockName = txtF;
             Map<String, String> modelMap = new HashMap<>();
             modelMap.put("model", blockName);
 

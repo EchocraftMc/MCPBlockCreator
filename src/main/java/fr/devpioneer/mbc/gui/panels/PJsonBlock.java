@@ -6,13 +6,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import static fr.devpioneer.mbc.Main.logger;
 import static fr.devpioneer.mbc.core.json.Block.saveBlockJson;
 import static fr.devpioneer.mbc.core.json.BlockStates.saveStatesJson;
 import static fr.devpioneer.mbc.core.json.Item.saveItemJson;
 
 public class PJsonBlock extends JPanel {
     static JMenuBar menuBar = new JMenuBar();
+
     public PJsonBlock() {
         setLayout(new FlowLayout());
 
@@ -41,9 +45,10 @@ public class PJsonBlock extends JPanel {
                                 directoryModel.mkdirs();
                                 directoryBlockstates.mkdirs();
                             }
-                            saveItemJson(directoryItems, txtF);
-                            saveBlockJson(directoryBlock, txtF);
-                            saveStatesJson(directoryBlockstates, txtF);
+                            saveItemJson(directoryItems, txtF.getText());
+                            saveBlockJson(directoryBlock, txtF.getText());
+                            saveStatesJson(directoryBlockstates, txtF.getText());
+                            logger.log(Level.INFO, "All jsons are saved !");
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
                         }
